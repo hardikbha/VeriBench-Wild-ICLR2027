@@ -37,7 +37,22 @@ decomposition of one error measure.
 |---|---|---|---|---|
 | Information access | T1, 2,150 Community Notes test records | claim only, note only, claim + note; random, same-mechanism, or masked note | test records and labels; prompted-model weights | Removing the note costs 12.7–21.3 macro-F1 points across five models; note-only inputs stay close to full input. |
 | Source and adaptation | binary verdict, UPFD vs. Community Notes, unmatched and strict-matched pools | 16-shot in-context learning vs. QLoRA (which also uses far more supervision) | initial Qwen3-4B backbone; evaluation records within each pool | Home-source gap *G* = 35.56 [31.67, 39.45] points for QLoRA vs. 3.07 [−5.51, 11.66] for ICL; strict matching lowers the QLoRA gap to 13.83 [8.21, 19.45] while changing the pools. |
-| Scoring | T0, 384 generated items, 476 mechanism judgments | eight judge-and-parser pipelines; strict vs. lenient parser for the five added judges | generated outputs, prompt, mechanism definitions | Acceptance of the same outputs ranges from 15.3% to 63.4%; human-majority acceptance is 16.4%; re-parsing Qwen3-4B's stored replies moves it from 0.4% to 31.9%. |
+| Scoring | T0, 384 generated items, 476 mechanism judgments | eight judge-and-parser pipelines; strict vs. lenient parser for all eight judges | generated outputs, prompt, mechanism definitions | Acceptance of the same outputs ranges from 15.3% to 63.4%; human-majority acceptance is 16.4%; the parser changes acceptance only for Qwen3-4B (0.4% to 31.9%), the one judge that almost never follows the requested format. |
+
+### Ranking consequences (paper, Appendix K)
+
+Each audited setting changes which systems look better, not only their scores:
+
+- **Information:** API models (Gemini Flash, Gemini Pro) lead open-weight models (Qwen3-4B,
+  Qwen3-32B) by 3.9 [2.5, 5.2] macro-F1 points with the correct note, and also with no note or a
+  masked note. A wrong note erases the lead: −0.1 [−1.7, 1.4] with a random note and
+  −0.8 [−2.2, 0.7] with a same-mechanism note (paired item bootstrap, 5,000 resamples).
+- **Generalization:** on unmatched pools, QLoRA beats 16-shot ICL within source by
+  17.3 [14.3, 20.3] points but trails it across sources by 15.2 [8.6, 21.7] points
+  (seed-paired *t*-intervals).
+- **Scoring:** ranking the eight judges by acceptance nearly reverses their ranking by agreement
+  with the human majority (Spearman ρ = −0.81 with the lenient parser); under strict parsing the
+  correlation is −0.14.
 
 ## Reporting results on VeriBench-Wild
 
@@ -57,10 +72,13 @@ LICENSE
 CITATION.cff
 data/tier1/                 public Tier-1 root splits (train/val/test) and SHA256SUMS
 prompts/                    frozen prompts, definitions, and masking vocabulary (verbatim from the paper)
-results/final_results.json  aggregate results behind Figures 2-4 and Tables 3-4
-scripts/build_figures.py    regenerates Figures 2-4 and Tables 3-4 from results/ (no model calls)
+results/final_results.json    aggregate results behind Figures 2-4 and Tables 3-4
+results/ranking_results.json  ranking consequences (information and generalization audits)
+results/parser_results.json   strict and lenient parsing for all eight judges
+scripts/build_figures.py      regenerates Figures 2-4 and Tables 3-4 from results/ (no model calls)
+scripts/build_ranking_tables.py  regenerates the Appendix K tables from results/
 scripts/requirements.txt
-figures/, tables/           outputs of scripts/build_figures.py
+figures/, tables/             outputs of the two scripts
 ```
 
 ## What is and is not in this repository
@@ -104,11 +122,14 @@ cd data/tier1 && sha256sum -c SHA256SUMS
 ```bash
 pip install -r scripts/requirements.txt
 python scripts/build_figures.py
+python scripts/build_ranking_tables.py
 ```
 
-This reads `results/final_results.json` and writes `figures/fig2_information.pdf`,
+The first script reads `results/final_results.json` and writes `figures/fig2_information.pdf`,
 `figures/fig3_source.pdf`, `figures/fig4_scoring.pdf`, `tables/table3_judges.tex`, and
-`tables/table4_human_agreement.tex`. No model calls or data downloads are needed.
+`tables/table4_human_agreement.tex`. The second reads `results/ranking_results.json` and
+`results/parser_results.json` and writes the Appendix K tables. No model calls or data downloads
+are needed.
 
 ## License
 

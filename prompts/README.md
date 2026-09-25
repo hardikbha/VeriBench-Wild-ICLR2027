@@ -21,8 +21,10 @@ in braces.
 - **Lenient:** additionally reads a verdict on the first non-empty line (optionally bolded or
   punctuated) when no `VERDICT:` field is found.
 - All 476 judgments stay in the denominator; unparsed responses count as not-YES.
-- Only the five added judges have stored replies that can be re-parsed; the three original judges
-  retain parsed verdicts only.
+- Both parsers are applied to all eight judges. The three original judges stored only parsed
+  verdicts, so they were re-run with the frozen protocol to store raw replies; their strict
+  verdicts reproduce 100% (Mistral-7B), 99.8% (Phi-3-medium), and 93.9% (Qwen2.5-0.5B) of the
+  originally stored ones.
 
 Note that the evaluator prompt asks for exactly one verdict token but also specifies a
 `VERDICT:`-prefixed format. The paper reports the resulting parser sensitivity as

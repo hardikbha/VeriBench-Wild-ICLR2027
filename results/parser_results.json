@@ -1,0 +1,288 @@
+{
+ "judges": {
+  "Mistral-7B": {
+   "source": "rerun",
+   "template_compliance": 1,
+   "unparsed_under_lenient": 0,
+   "strict": {
+    "yes_rate": 0.634453781512605,
+    "kappa": 0.10328329645356141,
+    "balanced_acc": 0.6112614353820384,
+    "yes_f1": 0.3368421052631579
+   },
+   "lenient": {
+    "yes_rate": 0.634453781512605,
+    "kappa": 0.10328329645356141,
+    "balanced_acc": 0.6112614353820384,
+    "yes_f1": 0.3368421052631579
+   },
+   "parser_shift_pts": 0.0,
+   "strict_reproduction_rate_vs_stored": 1,
+   "stored_strict": {
+    "yes_rate": 0.634453781512605,
+    "kappa": 0.10328329645356141,
+    "balanced_acc": 0.6112614353820384,
+    "yes_f1": 0.3368421052631579
+   },
+   "by_generator_lenient": {
+    "Qwen": 0.614406779661017,
+    "Mistral": 0.6541666666666667
+   },
+   "by_generator_strict": {
+    "Qwen": 0.614406779661017,
+    "Mistral": 0.6541666666666667
+   }
+  },
+  "Qwen2.5-0.5B": {
+   "source": "rerun",
+   "template_compliance": 0.7584033613445378,
+   "unparsed_under_lenient": 14,
+   "strict": {
+    "yes_rate": 0.4474789915966387,
+    "kappa": 0.07320872274143295,
+    "balanced_acc": 0.5620731864450458,
+    "yes_f1": 0.29553264604810997
+   },
+   "lenient": {
+    "yes_rate": 0.4474789915966387,
+    "kappa": 0.07320872274143295,
+    "balanced_acc": 0.5620731864450458,
+    "yes_f1": 0.29553264604810997
+   },
+   "parser_shift_pts": 0.0,
+   "strict_reproduction_rate_vs_stored": 0.9390756302521008,
+   "stored_strict": {
+    "yes_rate": 0.4495798319327731,
+    "kappa": 0.11658207711537,
+    "balanced_acc": 0.5991495941244684,
+    "yes_f1": 0.32876712328767127
+   },
+   "by_generator_lenient": {
+    "Qwen": 0.3898305084745763,
+    "Mistral": 0.5041666666666667
+   },
+   "by_generator_strict": {
+    "Qwen": 0.3898305084745763,
+    "Mistral": 0.5041666666666667
+   }
+  },
+  "Phi-3-medium": {
+   "source": "rerun",
+   "template_compliance": 1,
+   "unparsed_under_lenient": 0,
+   "strict": {
+    "yes_rate": 0.3067226890756303,
+    "kappa": 0.36418280698406624,
+    "balanced_acc": 0.7459090323411932,
+    "yes_f1": 0.5
+   },
+   "lenient": {
+    "yes_rate": 0.3067226890756303,
+    "kappa": 0.36418280698406624,
+    "balanced_acc": 0.7459090323411932,
+    "yes_f1": 0.5
+   },
+   "parser_shift_pts": 0.0,
+   "strict_reproduction_rate_vs_stored": 0.9978991596638656,
+   "stored_strict": {
+    "yes_rate": 0.30462184873949577,
+    "kappa": 0.3674456469686813,
+    "balanced_acc": 0.7471653137482284,
+    "yes_f1": 0.5022421524663677
+   },
+   "by_generator_lenient": {
+    "Qwen": 0.24152542372881355,
+    "Mistral": 0.37083333333333335
+   },
+   "by_generator_strict": {
+    "Qwen": 0.24152542372881355,
+    "Mistral": 0.37083333333333335
+   }
+  },
+  "Qwen3-4B": {
+   "source": "stored",
+   "template_compliance": 0.01050420168067227,
+   "unparsed_under_lenient": 0,
+   "strict": {
+    "yes_rate": 0.004201680672268907,
+    "kappa": 0.016945562380851705,
+    "balanced_acc": 0.5051539750032212,
+    "yes_f1": 0.025
+   },
+   "lenient": {
+    "yes_rate": 0.31932773109243695,
+    "kappa": 0.31181792743214254,
+    "balanced_acc": 0.7153717304471073,
+    "yes_f1": 0.4608695652173913
+   },
+   "parser_shift_pts": 31.512605042016805,
+   "strict_reproduction_rate_vs_stored": null,
+   "stored_strict": null,
+   "by_generator_lenient": {
+    "Qwen": 0.2330508474576271,
+    "Mistral": 0.4041666666666667
+   },
+   "by_generator_strict": {
+    "Qwen": 0.00423728813559322,
+    "Mistral": 0.004166666666666667
+   }
+  },
+  "Qwen3-32B": {
+   "source": "stored",
+   "template_compliance": 1,
+   "unparsed_under_lenient": 0,
+   "strict": {
+    "yes_rate": 0.20378151260504201,
+    "kappa": 0.44836286820795695,
+    "balanced_acc": 0.7461345187475841,
+    "yes_f1": 0.5485714285714286
+   },
+   "lenient": {
+    "yes_rate": 0.20378151260504201,
+    "kappa": 0.44836286820795695,
+    "balanced_acc": 0.7461345187475841,
+    "yes_f1": 0.5485714285714286
+   },
+   "parser_shift_pts": 0.0,
+   "strict_reproduction_rate_vs_stored": null,
+   "stored_strict": null,
+   "by_generator_lenient": {
+    "Qwen": 0.15677966101694915,
+    "Mistral": 0.25
+   },
+   "by_generator_strict": {
+    "Qwen": 0.15677966101694915,
+    "Mistral": 0.25
+   }
+  },
+  "Gemini Flash": {
+   "source": "stored",
+   "template_compliance": 0.9978991596638656,
+   "unparsed_under_lenient": 0,
+   "strict": {
+    "yes_rate": 0.15126050420168066,
+    "kappa": 0.38292780215396904,
+    "balanced_acc": 0.6855431001159644,
+    "yes_f1": 0.48000000000000004
+   },
+   "lenient": {
+    "yes_rate": 0.15336134453781514,
+    "kappa": 0.3783229731516996,
+    "balanced_acc": 0.6842868187089293,
+    "yes_f1": 0.4768211920529801
+   },
+   "parser_shift_pts": 0.2100840336134474,
+   "strict_reproduction_rate_vs_stored": null,
+   "stored_strict": null,
+   "by_generator_lenient": {
+    "Qwen": 0.11016949152542373,
+    "Mistral": 0.19583333333333333
+   },
+   "by_generator_strict": {
+    "Qwen": 0.11016949152542373,
+    "Mistral": 0.19166666666666668
+   }
+  },
+  "Gemini Pro": {
+   "source": "stored",
+   "template_compliance": 1,
+   "unparsed_under_lenient": 0,
+   "strict": {
+    "yes_rate": 0.16806722689075632,
+    "kappa": 0.4688177528376482,
+    "balanced_acc": 0.7368251513980157,
+    "yes_f1": 0.5569620253164557
+   },
+   "lenient": {
+    "yes_rate": 0.16806722689075632,
+    "kappa": 0.4688177528376482,
+    "balanced_acc": 0.7368251513980157,
+    "yes_f1": 0.5569620253164557
+   },
+   "parser_shift_pts": 0.0,
+   "strict_reproduction_rate_vs_stored": null,
+   "stored_strict": null,
+   "by_generator_lenient": {
+    "Qwen": 0.11440677966101695,
+    "Mistral": 0.22083333333333333
+   },
+   "by_generator_strict": {
+    "Qwen": 0.11440677966101695,
+    "Mistral": 0.22083333333333333
+   }
+  },
+  "Grok 4.7": {
+   "source": "stored",
+   "template_compliance": 1,
+   "unparsed_under_lenient": 0,
+   "strict": {
+    "yes_rate": 0.18277310924369747,
+    "kappa": 0.5091121783031644,
+    "balanced_acc": 0.7663638706352274,
+    "yes_f1": 0.593939393939394
+   },
+   "lenient": {
+    "yes_rate": 0.18277310924369747,
+    "kappa": 0.5091121783031644,
+    "balanced_acc": 0.7663638706352274,
+    "yes_f1": 0.593939393939394
+   },
+   "parser_shift_pts": 0.0,
+   "strict_reproduction_rate_vs_stored": null,
+   "stored_strict": null,
+   "by_generator_lenient": {
+    "Qwen": 0.13135593220338984,
+    "Mistral": 0.23333333333333334
+   },
+   "by_generator_strict": {
+    "Qwen": 0.13135593220338984,
+    "Mistral": 0.23333333333333334
+   }
+  }
+ },
+ "kappa_rank_strict": {
+  "Mistral-7B": 6,
+  "Qwen2.5-0.5B": 7,
+  "Phi-3-medium": 5,
+  "Qwen3-4B": 8,
+  "Qwen3-32B": 3,
+  "Gemini Flash": 4,
+  "Gemini Pro": 2,
+  "Grok 4.7": 1
+ },
+ "kappa_rank_lenient": {
+  "Mistral-7B": 7,
+  "Qwen2.5-0.5B": 8,
+  "Phi-3-medium": 5,
+  "Qwen3-4B": 6,
+  "Qwen3-32B": 3,
+  "Gemini Flash": 4,
+  "Gemini Pro": 2,
+  "Grok 4.7": 1
+ },
+ "yes_rank_strict": {
+  "Mistral-7B": 1,
+  "Qwen2.5-0.5B": 2,
+  "Phi-3-medium": 3,
+  "Qwen3-4B": 8,
+  "Qwen3-32B": 4,
+  "Gemini Flash": 7,
+  "Gemini Pro": 6,
+  "Grok 4.7": 5
+ },
+ "yes_rank_lenient": {
+  "Mistral-7B": 1,
+  "Qwen2.5-0.5B": 2,
+  "Phi-3-medium": 4,
+  "Qwen3-4B": 3,
+  "Qwen3-32B": 5,
+  "Gemini Flash": 8,
+  "Gemini Pro": 7,
+  "Grok 4.7": 6
+ },
+ "note": "Original three judges: FX5 re-run with the frozen protocol and raw replies stored; added five: stored frontier replies. Unparsed lenient replies count as not-YES (denominator 476).",
+ "spearman_acceptance_vs_kappa": {
+  "lenient_all_eight": -0.8095238095238096,
+  "strict_all_eight": -0.14285714285714288
+ }
+}

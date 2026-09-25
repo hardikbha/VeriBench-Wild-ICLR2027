@@ -1,0 +1,564 @@
+{
+ "A_information": {
+  "n_items": 2150,
+  "validated_against_stored": true,
+  "scores": {
+   "claim_plus_note": {
+    "Qwen3-4B": 0.39992116192816546,
+    "Qwen3-32B": 0.42369499093260427,
+    "Gemini Flash": 0.4557601849281074,
+    "Gemini Pro": 0.4451631424070786
+   },
+   "claim_only": {
+    "Qwen3-4B": 0.22094074417033796,
+    "Qwen3-32B": 0.2109147421470452,
+    "Gemini Flash": 0.2755370361651422,
+    "Gemini Pro": 0.258613206956292
+   },
+   "note_only": {
+    "Qwen3-4B": 0.3698267900154078,
+    "Qwen3-32B": 0.38802096761261123,
+    "Gemini Flash": 0.4256604327980818,
+    "Gemini Pro": 0.4254006020417533
+   },
+   "claim_plus_random_note": {
+    "Qwen3-4B": 0.22223835430088415,
+    "Qwen3-32B": 0.22563581259310717,
+    "Gemini Flash": 0.22800602523531913,
+    "Gemini Pro": 0.21748567610360095
+   },
+   "claim_plus_same_axis_wrong_note": {
+    "Qwen3-4B": 0.3017567244585723,
+    "Qwen3-32B": 0.3032616353222058,
+    "Gemini Flash": 0.29239081182013754,
+    "Gemini Pro": 0.29735006644058665
+   },
+   "claim_plus_trigger_masked_note": {
+    "Qwen3-4B": 0.3822964698320923,
+    "Qwen3-32B": 0.403605138309433,
+    "Gemini Flash": 0.4433179218621541,
+    "Gemini Pro": 0.43761465934528404
+   }
+  },
+  "ranks": {
+   "claim_plus_note": [
+    "Gemini Flash",
+    "Gemini Pro",
+    "Qwen3-32B",
+    "Qwen3-4B"
+   ],
+   "claim_only": [
+    "Gemini Flash",
+    "Gemini Pro",
+    "Qwen3-4B",
+    "Qwen3-32B"
+   ],
+   "note_only": [
+    "Gemini Flash",
+    "Gemini Pro",
+    "Qwen3-32B",
+    "Qwen3-4B"
+   ],
+   "claim_plus_random_note": [
+    "Gemini Flash",
+    "Qwen3-32B",
+    "Qwen3-4B",
+    "Gemini Pro"
+   ],
+   "claim_plus_same_axis_wrong_note": [
+    "Qwen3-32B",
+    "Qwen3-4B",
+    "Gemini Pro",
+    "Gemini Flash"
+   ],
+   "claim_plus_trigger_masked_note": [
+    "Gemini Flash",
+    "Gemini Pro",
+    "Qwen3-32B",
+    "Qwen3-4B"
+   ]
+  },
+  "pairwise": {
+   "claim_plus_note|Qwen3-4B-Qwen3-32B": {
+    "diff_pts": -2.3773829004438807,
+    "ci95": [
+     -3.8534151574218773,
+     -0.8427693274345134
+    ]
+   },
+   "claim_plus_note|Qwen3-4B-Gemini Flash": {
+    "diff_pts": -5.583902299994192,
+    "ci95": [
+     -7.297701967107854,
+     -3.859908219750348
+    ]
+   },
+   "claim_plus_note|Qwen3-4B-Gemini Pro": {
+    "diff_pts": -4.524198047891314,
+    "ci95": [
+     -6.255347254936818,
+     -2.8126231458996283
+    ]
+   },
+   "claim_plus_note|Qwen3-32B-Gemini Flash": {
+    "diff_pts": -3.2065193995503116,
+    "ci95": [
+     -4.789387187881798,
+     -1.6777287140201584
+    ]
+   },
+   "claim_plus_note|Qwen3-32B-Gemini Pro": {
+    "diff_pts": -2.146815147447434,
+    "ci95": [
+     -3.916355086199214,
+     -0.4038017730400495
+    ]
+   },
+   "claim_plus_note|Gemini Flash-Gemini Pro": {
+    "diff_pts": 1.0597042521028777,
+    "ci95": [
+     -0.31315726440137415,
+     2.438406681106979
+    ]
+   },
+   "claim_only|Qwen3-4B-Qwen3-32B": {
+    "diff_pts": 1.0026002023292762,
+    "ci95": [
+     -0.4165274885516031,
+     2.4275466352153217
+    ]
+   },
+   "claim_only|Qwen3-4B-Gemini Flash": {
+    "diff_pts": -5.459629199480423,
+    "ci95": [
+     -7.3734708495691255,
+     -3.468200381306827
+    ]
+   },
+   "claim_only|Qwen3-4B-Gemini Pro": {
+    "diff_pts": -3.7672462785954015,
+    "ci95": [
+     -5.689674540677686,
+     -1.7925004587207174
+    ]
+   },
+   "claim_only|Qwen3-32B-Gemini Flash": {
+    "diff_pts": -6.462229401809699,
+    "ci95": [
+     -8.424522554441928,
+     -4.449853868632883
+    ]
+   },
+   "claim_only|Qwen3-32B-Gemini Pro": {
+    "diff_pts": -4.769846480924677,
+    "ci95": [
+     -6.697469717580319,
+     -2.8077996823276115
+    ]
+   },
+   "claim_only|Gemini Flash-Gemini Pro": {
+    "diff_pts": 1.6923829208850216,
+    "ci95": [
+     0.04710377699402345,
+     3.312454362583411
+    ]
+   },
+   "note_only|Qwen3-4B-Qwen3-32B": {
+    "diff_pts": -1.8194177597203431,
+    "ci95": [
+     -3.3031666345568604,
+     -0.2627776282592533
+    ]
+   },
+   "note_only|Qwen3-4B-Gemini Flash": {
+    "diff_pts": -5.5833642782674,
+    "ci95": [
+     -7.244521401979545,
+     -3.8382131522329574
+    ]
+   },
+   "note_only|Qwen3-4B-Gemini Pro": {
+    "diff_pts": -5.557381202634549,
+    "ci95": [
+     -7.26833193355571,
+     -3.7974273399360103
+    ]
+   },
+   "note_only|Qwen3-32B-Gemini Flash": {
+    "diff_pts": -3.7639465185470566,
+    "ci95": [
+     -5.330405135714385,
+     -2.2176415874004642
+    ]
+   },
+   "note_only|Qwen3-32B-Gemini Pro": {
+    "diff_pts": -3.737963442914205,
+    "ci95": [
+     -5.231435018957659,
+     -2.272214847969071
+    ]
+   },
+   "note_only|Gemini Flash-Gemini Pro": {
+    "diff_pts": 0.025983075632851627,
+    "ci95": [
+     -1.1816015721520663,
+     1.2608778278078596
+    ]
+   },
+   "claim_plus_random_note|Qwen3-4B-Qwen3-32B": {
+    "diff_pts": -0.33974582922230157,
+    "ci95": [
+     -1.7099557353505883,
+     1.065073771749908
+    ]
+   },
+   "claim_plus_random_note|Qwen3-4B-Gemini Flash": {
+    "diff_pts": -0.5767670934434976,
+    "ci95": [
+     -2.6164933666753014,
+     1.4022189330283912
+    ]
+   },
+   "claim_plus_random_note|Qwen3-4B-Gemini Pro": {
+    "diff_pts": 0.47526781972832,
+    "ci95": [
+     -1.4509742384464432,
+     2.4058046813891023
+    ]
+   },
+   "claim_plus_random_note|Qwen3-32B-Gemini Flash": {
+    "diff_pts": -0.23702126422119607,
+    "ci95": [
+     -2.2796448362846964,
+     1.7190033483299052
+    ]
+   },
+   "claim_plus_random_note|Qwen3-32B-Gemini Pro": {
+    "diff_pts": 0.8150136489506216,
+    "ci95": [
+     -0.9996709475498652,
+     2.62451634033225
+    ]
+   },
+   "claim_plus_random_note|Gemini Flash-Gemini Pro": {
+    "diff_pts": 1.0520349131718176,
+    "ci95": [
+     -0.7151799456387778,
+     2.806010724353044
+    ]
+   },
+   "claim_plus_same_axis_wrong_note|Qwen3-4B-Qwen3-32B": {
+    "diff_pts": -0.15049108636334685,
+    "ci95": [
+     -1.718688193354692,
+     1.4782108293388359
+    ]
+   },
+   "claim_plus_same_axis_wrong_note|Qwen3-4B-Gemini Flash": {
+    "diff_pts": 0.9365912638434781,
+    "ci95": [
+     -0.8987453370284747,
+     2.81169142251083
+    ]
+   },
+   "claim_plus_same_axis_wrong_note|Qwen3-4B-Gemini Pro": {
+    "diff_pts": 0.4406658017985676,
+    "ci95": [
+     -1.4042383491639723,
+     2.274885789610987
+    ]
+   },
+   "claim_plus_same_axis_wrong_note|Qwen3-32B-Gemini Flash": {
+    "diff_pts": 1.087082350206825,
+    "ci95": [
+     -0.6642214454859583,
+     2.798843411496399
+    ]
+   },
+   "claim_plus_same_axis_wrong_note|Qwen3-32B-Gemini Pro": {
+    "diff_pts": 0.5911568881619145,
+    "ci95": [
+     -1.1798948026890863,
+     2.358155975747703
+    ]
+   },
+   "claim_plus_same_axis_wrong_note|Gemini Flash-Gemini Pro": {
+    "diff_pts": -0.4959254620449105,
+    "ci95": [
+     -1.8804050298009625,
+     0.9311725828816696
+    ]
+   },
+   "claim_plus_trigger_masked_note|Qwen3-4B-Qwen3-32B": {
+    "diff_pts": -2.1308668477340698,
+    "ci95": [
+     -3.693888203623198,
+     -0.5272001838552577
+    ]
+   },
+   "claim_plus_trigger_masked_note|Qwen3-4B-Gemini Flash": {
+    "diff_pts": -6.1021452030061765,
+    "ci95": [
+     -8.039746405613249,
+     -4.252608840064042
+    ]
+   },
+   "claim_plus_trigger_masked_note|Qwen3-4B-Gemini Pro": {
+    "diff_pts": -5.531818951319173,
+    "ci95": [
+     -7.367991248881924,
+     -3.7098842028895804
+    ]
+   },
+   "claim_plus_trigger_masked_note|Qwen3-32B-Gemini Flash": {
+    "diff_pts": -3.9712783552721067,
+    "ci95": [
+     -5.786848718006774,
+     -2.239300124230967
+    ]
+   },
+   "claim_plus_trigger_masked_note|Qwen3-32B-Gemini Pro": {
+    "diff_pts": -3.4009521035851034,
+    "ci95": [
+     -5.30366287843505,
+     -1.4883469310533006
+    ]
+   },
+   "claim_plus_trigger_masked_note|Gemini Flash-Gemini Pro": {
+    "diff_pts": 0.5703262516870033,
+    "ci95": [
+     -0.9502935488888,
+     2.120431434492571
+    ]
+   }
+  },
+  "drops": {
+   "claim_only": {
+    "per_model_pts": {
+     "Qwen3-4B": -17.89804177578275,
+     "Qwen3-32B": -21.278024878555907,
+     "Gemini Flash": -18.02231487629652,
+     "Gemini Pro": -18.654993545078664
+    },
+    "api_minus_open_pts": 1.2493791164817387,
+    "api_minus_open_ci95": [
+     -0.6193830027738648,
+     3.1169755875098026
+    ]
+   },
+   "note_only": {
+    "per_model_pts": {
+     "Qwen3-4B": -3.0094371912757656,
+     "Qwen3-32B": -3.567402331999303,
+     "Gemini Flash": -3.009975213002558,
+     "Gemini Pro": -1.976254036532532
+    },
+    "api_minus_open_pts": 0.7953051368699893,
+    "api_minus_open_ci95": [
+     -0.7782894998593793,
+     2.3740942593454877
+    ]
+   },
+   "claim_plus_random_note": {
+    "per_model_pts": {
+     "Qwen3-4B": -17.768280762728132,
+     "Qwen3-32B": -19.80591783394971,
+     "Gemini Flash": -22.775415969278825,
+     "Gemini Pro": -22.767746630347766
+    },
+    "api_minus_open_pts": -3.984482001474374,
+    "api_minus_open_ci95": [
+     -5.769655121468091,
+     -2.218153948824868
+    ]
+   },
+   "claim_plus_same_axis_wrong_note": {
+    "per_model_pts": {
+     "Qwen3-4B": -9.816443746959314,
+     "Qwen3-32B": -12.043335561039846,
+     "Gemini Flash": -16.336937310796984,
+     "Gemini Pro": -14.781307596649196
+    },
+    "api_minus_open_pts": -4.62923279972351,
+    "api_minus_open_ci95": [
+     -6.297412129557113,
+     -2.9406830113336615
+    ]
+   },
+   "claim_plus_trigger_masked_note": {
+    "per_model_pts": {
+     "Qwen3-4B": -1.7624692096073147,
+     "Qwen3-32B": -2.0089852623171254,
+     "Gemini Flash": -1.2442263065953307,
+     "Gemini Pro": -0.7548483061794564
+    },
+    "api_minus_open_pts": 0.8861899295748266,
+    "api_minus_open_ci95": [
+     0.10201647357831711,
+     1.7247390290505853
+    ]
+   }
+  },
+  "api_minus_open_level": {
+   "claim_plus_note": {
+    "pts": 3.865358723720813,
+    "ci95": [
+     2.53678377717585,
+     5.194486118263218
+    ]
+   },
+   "claim_only": {
+    "pts": 5.1147378402025545,
+    "ci95": [
+     3.461034689164067,
+     6.694861552391789
+    ]
+   },
+   "note_only": {
+    "pts": 4.660663860590803,
+    "ci95": [
+     3.373005300633515,
+     5.89646320234427
+    ]
+   },
+   "claim_plus_random_note": {
+    "pts": -0.11912327775356057,
+    "ci95": [
+     -1.6901368825619822,
+     1.4414102907680568
+    ]
+   },
+   "claim_plus_same_axis_wrong_note": {
+    "pts": -0.7638740760026963,
+    "ci95": [
+     -2.2168819260766415,
+     0.7113108714204331
+    ]
+   },
+   "claim_plus_trigger_masked_note": {
+    "pts": 4.7515486532956395,
+    "ci95": [
+     3.2891143600028414,
+     6.243246635881373
+    ]
+   }
+  },
+  "kendall_vs_full": {
+   "claim_plus_note": 1.0,
+   "claim_only": 0.6666666666666666,
+   "note_only": 1.0,
+   "claim_plus_random_note": 0.3333333333333333,
+   "claim_plus_same_axis_wrong_note": -0.6666666666666666,
+   "claim_plus_trigger_masked_note": 1.0
+  }
+ },
+ "B_generalization": {
+  "unmatched": {
+   "within_mean": {
+    "icl": 0.5934123489406481,
+    "qlora": 0.7665916906081982
+   },
+   "cross_mean": {
+    "icl": 0.5626903220798843,
+    "qlora": 0.4110218483790112
+   },
+   "qlora_minus_icl_within_pts": {
+    "mean": 17.31793416675502,
+    "per_seed": [
+     16.886553885318833,
+     16.384242407872907,
+     18.683006207073326
+    ],
+    "t_ci95": [
+     14.315433410022042,
+     20.320434923487998
+    ]
+   },
+   "qlora_minus_icl_cross_pts": {
+    "mean": -15.166847370087316,
+    "per_seed": [
+     -15.732655181920496,
+     -12.304254392809566,
+     -17.463632535531882
+    ],
+    "t_ci95": [
+     -21.690257608526593,
+     -8.643437131648039
+    ]
+   },
+   "validated_against_stored": true
+  },
+  "matched": {
+   "within_mean": {
+    "icl": 0.5607801734804408,
+    "qlora": 0.6429155571462755
+   },
+   "cross_mean": {
+    "icl": 0.5364920131252929,
+    "qlora": 0.5045849745235315
+   },
+   "qlora_minus_icl_within_pts": {
+    "mean": 8.213538366583462,
+    "per_seed": [
+     6.774780960076255,
+     7.085782906653204,
+     10.780051233020927
+    ],
+    "t_ci95": [
+     2.6781887738239574,
+     13.748887959342966
+    ]
+   },
+   "qlora_minus_icl_cross_pts": {
+    "mean": -3.190703860176144,
+    "per_seed": [
+     -3.125080887611226,
+     -1.8017563302906048,
+     -4.6452743626266
+    ],
+    "t_ci95": [
+     -6.725654790964873,
+     0.34424707061258397
+    ]
+   },
+   "validated_against_stored": true
+  }
+ },
+ "C_scoring": {
+  "order_by_acceptance": [
+   "Mistral-7B",
+   "Qwen2.5-0.5B",
+   "Qwen3-4B",
+   "Phi-3-medium",
+   "Qwen3-32B",
+   "Grok-4.7",
+   "Gemini-3.1-Pro",
+   "Gemini-3.5-Flash"
+  ],
+  "order_by_kappa": [
+   "Grok-4.7",
+   "Gemini-3.1-Pro",
+   "Qwen3-32B",
+   "Gemini-3.5-Flash",
+   "Phi-3-medium",
+   "Qwen3-4B",
+   "Qwen2.5-0.5B",
+   "Mistral-7B"
+  ],
+  "order_by_closeness_to_human_rate": [
+   "Gemini-3.1-Pro",
+   "Gemini-3.5-Flash",
+   "Grok-4.7",
+   "Qwen3-32B",
+   "Phi-3-medium",
+   "Qwen3-4B",
+   "Qwen2.5-0.5B",
+   "Mistral-7B"
+  ],
+  "spearman_acceptance_vs_kappa": -0.8333333333333335,
+  "qwen3_4b_kappa_rank_strict": 8,
+  "qwen3_4b_kappa_rank_lenient": 6
+ },
+ "bootstrap_reps": 5000,
+ "seed": 0
+}
