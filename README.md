@@ -35,24 +35,28 @@ decomposition of one error measure.
 
 | Audit | Task and pool | What varies | Held fixed | Main result |
 |---|---|---|---|---|
-| Information access | T1, 2,150 Community Notes test records | claim only, note only, claim + note; random, same-mechanism, or masked note | test records and labels; prompted-model weights | Removing the note costs 12.7–21.3 macro-F1 points across five models; note-only inputs stay close to full input. |
-| Source and adaptation | binary verdict, UPFD vs. Community Notes, unmatched and strict-matched pools | 16-shot in-context learning vs. QLoRA (which also uses far more supervision) | initial Qwen3-4B backbone; evaluation records within each pool | Home-source gap *G* = 35.56 [31.67, 39.45] points for QLoRA vs. 3.07 [−5.51, 11.66] for ICL; strict matching lowers the QLoRA gap to 13.83 [8.21, 19.45] while changing the pools. |
-| Scoring | T0, 384 generated items, 476 mechanism judgments | eight judge-and-parser pipelines; strict vs. lenient parser for all eight judges | generated outputs, prompt, mechanism definitions | Acceptance of the same outputs ranges from 15.3% to 63.4%; human-majority acceptance is 16.4%; the parser changes acceptance only for Qwen3-4B (0.4% to 31.9%), the one judge that almost never follows the requested format. |
+| Information access | T1, 2,150 Community Notes test records; a fresh 2026 set of 2,150 records; AVeriTeC (1,500 claims) | claim only, note only, claim + note; random, same-mechanism, or masked note | test records and labels; prompted-model weights | For RoBERTa and eleven prompted models above the floor, removing the note costs 12.7–28.5 macro-F1 points; note-only inputs lose less. |
+| Source and adaptation | binary verdict, UPFD vs. Community Notes, unmatched and strict-matched pools | 16-shot in-context learning vs. QLoRA on 16, 64, 256, 1,024, 4,078, or all source examples | initial backbone (Qwen3-4B; Llama-3.1-8B); evaluation records within each pool | Home-source gap *G* = 35.56 [31.67, 39.45] points for full QLoRA vs. 3.07 [−5.51, 11.66] for ICL; QLoRA on the same 16 examples has *G* = 3.67, and *G* grows with every increase in training data on both backbones. |
+| Scoring | T0, 384 generated items, 476 mechanism judgments | eight judges; strict vs. lenient parser; four answer formats for twelve judges | generated outputs, instructions, mechanism definitions | Acceptance of the same outputs ranges from 15.3% to 63.4% (human majority 16.4%); the answer format alone moves acceptance by 12–49 points for ten of twelve judges; under the frozen prompt the parser matters only for Qwen3-4B (0.4% to 31.9%). |
 
-### Ranking consequences (paper, Appendix K)
+### Ranking consequences (paper, Section 4 and Appendix K)
 
 Each audited setting changes which systems look better, not only their scores:
 
-- **Information:** API models (Gemini Flash, Gemini Pro) lead open-weight models (Qwen3-4B,
-  Qwen3-32B) by 3.9 [2.5, 5.2] macro-F1 points with the correct note, and also with no note or a
-  masked note. A wrong note erases the lead: −0.1 [−1.7, 1.4] with a random note and
-  −0.8 [−2.2, 0.7] with a same-mechanism note (paired item bootstrap, 5,000 resamples).
-- **Generalization:** on unmatched pools, QLoRA beats 16-shot ICL within source by
-  17.3 [14.3, 20.3] points but trails it across sources by 15.2 [8.6, 21.7] points
-  (seed-paired *t*-intervals).
-- **Scoring:** ranking the eight judges by acceptance nearly reverses their ranking by agreement
-  with the human majority (Spearman ρ = −0.81 with the lenient parser); under strict parsing the
-  correlation is −0.14.
+- **Information (twelve prompted models):** with a same-mechanism wrong note, the model ranking barely
+  tracks the full-input ranking (Kendall τ = 0.15 [−0.03, 0.45]; 28 of 66 pairs flip, 11 significantly),
+  and the two Gemini models fall from first and third to eighth and seventh, 4.7 [3.2, 6.2] points behind
+  Phi-4. On AVeriTeC with same-verdict wrong evidence, τ = −0.06 and 31 of 66 pairs flip significantly.
+- **Fresh post-cutoff data:** on 2,150 records whose notes and posts date from 2026, full-input scores
+  change by −2.5 to +1.6 points per model and the ranking agrees with the frozen one (τ = 0.70); the
+  wrong-note reversal recurs (Phi-4 leads the Gemini models by 5.4 [4.0, 6.7] points).
+- **Generalization:** the home-source gap grows with QLoRA training data (Qwen3-4B: 3.7 at 16 examples to
+  35.6 on the full split; Llama-3.1-8B: −1.2 to 30.3). On Qwen3-4B, full QLoRA beats 16-shot ICL within
+  source by 17.3 [14.3, 20.3] points but trails it across sources by 15.2 [8.6, 21.7]; on Llama-3.1-8B it
+  ties ICL across sources.
+- **Scoring:** ranking the eight judges by acceptance nearly reverses their ranking by agreement with the
+  human majority (Spearman ρ = −0.81 with the lenient parser). Human raters find no significant
+  Mistral−Qwen generator difference, whereas 13 of 16 judge-and-parser pipelines do.
 
 ## Reporting results on VeriBench-Wild
 
@@ -60,7 +64,7 @@ Each audited setting changes which systems look better, not only their scores:
   (Tier-1 or full).
 - **Transfer:** state the source pools, matching rule, adaptation regime, and supervision budget,
   and report all four source-to-target scores beside the gap.
-- **Generation:** state the judge and its version, the prompt, the parser, and the denominator,
+- **Generation:** state the judge and its version, the prompt and answer format, the parser, and the denominator,
   and report agreement with human labels where available. Acceptance alone is neither correctness
   nor agreement.
 
@@ -75,8 +79,10 @@ prompts/                    frozen prompts, definitions, and masking vocabulary 
 results/final_results.json    aggregate results behind Figures 2-4 and Tables 3-4
 results/ranking_results.json  ranking consequences (information and generalization audits)
 results/parser_results.json   strict and lenient parsing for all eight judges
+results/new_results.json      model panel, fresh data, supervision scaling, answer formats, generator gaps
 scripts/build_figures.py      regenerates Figures 2-4 and Tables 3-4 from results/ (no model calls)
-scripts/build_ranking_tables.py  regenerates the Appendix K tables from results/
+scripts/build_ranking_tables.py  regenerates the parser and adaptation tables of Appendix K
+scripts/build_new_tables.py   regenerates the remaining Appendix K tables from results/new_results.json
 scripts/requirements.txt
 figures/, tables/             outputs of the two scripts
 ```
@@ -123,13 +129,14 @@ cd data/tier1 && sha256sum -c SHA256SUMS
 pip install -r scripts/requirements.txt
 python scripts/build_figures.py
 python scripts/build_ranking_tables.py
+python scripts/build_new_tables.py
 ```
 
-The first script reads `results/final_results.json` and writes `figures/fig2_information.pdf`,
-`figures/fig3_source.pdf`, `figures/fig4_scoring.pdf`, `tables/table3_judges.tex`, and
-`tables/table4_human_agreement.tex`. The second reads `results/ranking_results.json` and
-`results/parser_results.json` and writes the Appendix K tables. No model calls or data downloads
-are needed.
+The first script reads `results/final_results.json` and `results/new_results.json` and writes
+`figures/fig2_information.pdf`, `figures/fig3_source.pdf`, `figures/fig4_scoring.pdf`,
+`tables/table3_judges.tex`, and `tables/table4_human_agreement.tex`. The second reads
+`results/ranking_results.json` and `results/parser_results.json`, and the third reads
+`results/new_results.json`; both write Appendix K tables. No model calls or data downloads are needed.
 
 ## License
 
