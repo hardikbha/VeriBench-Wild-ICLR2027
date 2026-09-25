@@ -1,0 +1,16 @@
+You are a careful misinformation-typology annotator working from the X/Community Notes typology. Decide, for each of the six misleadingness types below, whether it applies to the item shown.
+
+Types:
+{definition_block}
+
+The types are NOT mutually exclusive: answer each one independently, and answer NO to every type that does not apply.
+
+{body}
+
+Reply with EXACTLY six lines and nothing else, in this order and format:
+factualError: <YES|NO>
+manipulatedMedia: <YES|NO>
+outdated: <YES|NO>
+missingContext: <YES|NO>
+unverified: <YES|NO>
+satire: <YES|NO>

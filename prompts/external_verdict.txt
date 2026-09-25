@@ -1,0 +1,9 @@
+You are a careful fact-checking annotator. Assign exactly one verdict to the item below.
+
+Verdicts:
+{verdict_definitions}
+
+{body}
+
+Reply with exactly one word on one line, one of: {available_labels}.
+VERDICT:

@@ -1,0 +1,3 @@
+<s>[INST] Rewrite the following true claim/explanation into a misleading claim that exhibits axis(es): {axes}.
+Note: {note}
+Misleading claim: [/INST]

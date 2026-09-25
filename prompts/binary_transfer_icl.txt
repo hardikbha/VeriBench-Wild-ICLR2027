@@ -1,0 +1,7 @@
+You are a fact-checking annotator. Decide whether each social-media claim is SUPPORTED (substantially accurate as stated) or REFUTED (misleading, false, or missing context that changes its meaning). Answer with exactly one word: SUPPORTED or REFUTED.
+
+CLAIM: {demonstration_claim}
+VERDICT: {demonstration_label}
+
+CLAIM: {target_claim}
+VERDICT:

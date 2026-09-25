@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite the accompanying paper."
+type: dataset
+title: "VeriBench-Wild: A Benchmark and Measurement Testbed for Misinformation Evaluation"
+abstract: >
+  A benchmark and measurement testbed of 27,158 real-world social-media records
+  from X Community Notes and UPFD, with frozen splits, a primary
+  mechanism-typology task (T1), supporting and diagnostic task views, public and
+  full representations, and reference baselines.
+authors:
+  - name: "Anonymous authors (under double-blind review)"
+license:
+  - "CC-BY-NC-SA-4.0"
+  - "CC-BY-SA-4.0"
+  - "CC-BY-4.0"
+  - "MIT"
+keywords:
+  - misinformation
+  - benchmark
+  - Community Notes
+  - evaluation
+  - LLM-as-judge
+preferred-citation:
+  type: conference-paper
+  title: "VeriBench-Wild: A Benchmark and Measurement Testbed for Misinformation Evaluation"
+  authors:
+    - name: "Anonymous authors (under double-blind review)"
+  conference:
+    name: "Submitted to the International Conference on Learning Representations (ICLR 2027)"
+  year: 2026

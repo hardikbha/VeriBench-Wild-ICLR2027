@@ -1,0 +1,9 @@
+CLAIM:
+"""
+{claim}
+"""
+
+FACT-CHECK NOTE:
+"""
+{condition_note}
+"""

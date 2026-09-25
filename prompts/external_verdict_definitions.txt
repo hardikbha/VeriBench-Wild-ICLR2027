@@ -1,0 +1,4 @@
+- CONFLICTING: the evidence is mixed: parts support and parts contradict the claim.
+- INSUFFICIENT: the evidence does not settle the claim either way.
+- REFUTED: the evidence contradicts the claim.
+- SUPPORTED: the evidence supports the claim as stated.

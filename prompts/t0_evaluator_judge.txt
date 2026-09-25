@@ -1,0 +1,23 @@
+You are a careful misinformation-typology annotator. Decide whether a rewrite of an original claim successfully introduces the misleadingness type '{short_name}'.
+
+Definition of '{short_name}': {definition}
+
+Original claim:
+"""
+{source_claim}
+"""
+
+Rewrite (intended to exhibit '{short_name}'):
+"""
+{generated_text}
+"""
+
+Answer with EXACTLY one token on a single line:
+  YES     -- the rewrite clearly exhibits the target axis
+  NO      -- the rewrite does not exhibit the target axis
+  NEUTRAL -- the rewrite is essentially identical in meaning to the original (no axis-specific change introduced)
+
+Then on a second line give a 1-sentence justification (<= 25 words).
+Format strictly:
+VERDICT: <YES|NO|NEUTRAL>
+REASON: <one sentence>

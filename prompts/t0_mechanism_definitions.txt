@@ -1,0 +1,6 @@
+factualError: the rewrite asserts something that is factually wrong (a verifiably false claim).
+manipulatedMedia: the rewrite explicitly references or implies edited, fake, doctored, deepfake, AI-generated, or otherwise manipulated images, video, or audio.
+outdated: the rewrite presents information that was once true but is no longer true now (stale stats, expired status, revoked policy, old date framed as current).
+missingContext: the rewrite omits crucial context that, if included, would change how a reader interprets the claim (cherry-picked numbers, no time frame, no comparison group, no caveats).
+unverified: the rewrite presents speculation, rumor, anonymous sourcing, or an unverified allegation as if it were established fact.
+satire: the rewrite is framed as joke, parody, irony, sarcasm, or obvious satire (e.g. Onion-style).

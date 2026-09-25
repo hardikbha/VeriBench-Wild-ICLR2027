@@ -1,0 +1,64 @@
+VeriBench-Wild review repository: license notice
+================================================
+
+This repository contains material under several licenses.
+
+| Content                                                        | License          |
+|----------------------------------------------------------------|------------------|
+| data/tier1/ records with metadata.tier in                      | CC-BY-NC-SA-4.0  |
+|   {wild, wild_control, wild_support} (Community Notes-derived)  |                  |
+| data/tier1/ records with metadata.tier == upfd_legacy           | CC-BY-SA-4.0     |
+|   (derived from UPFD)                                           |                  |
+| scripts/                                                       | MIT              |
+| prompts/, results/, figures/, tables/                          | CC-BY-4.0        |
+
+
+CC-BY-NC-SA-4.0 (Community Notes-derived records)
+--------------------------------------------------
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International.
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+CC-BY-SA-4.0 (UPFD-derived records)
+-----------------------------------
+These records are a cleaned, schema-mapped derivative of UPFD
+(Dou, Shu, Xia, Yu, and Sun, "User Preference-aware Fake News Detection",
+SIGIR 2021; https://github.com/safe-graph/GNN-FakeNews), which is licensed
+CC-BY-SA-4.0. The derivative inherits that license.
+https://creativecommons.org/licenses/by-sa/4.0/
+
+The two data licenses are not freely combinable: redistributing a merged
+derivative of both subsets requires care. The metadata.tier field on every
+record identifies which license applies.
+
+CC-BY-4.0 (prompts, aggregate results, figures, tables)
+-------------------------------------------------------
+Creative Commons Attribution 4.0 International.
+https://creativecommons.org/licenses/by/4.0/
+
+MIT License (scripts/)
+----------------------
+Copyright (c) 2026 Anonymous authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Use restrictions for the data
+-----------------------------
+Public posting is not consent to every downstream use. Do not attempt to
+re-link records to source posts, authors, or accounts, and do not identify
+posters or annotators.
